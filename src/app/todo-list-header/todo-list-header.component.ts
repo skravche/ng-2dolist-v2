@@ -14,8 +14,17 @@ export class TodoListHeaderComponent {
   add: EventEmitter<Todo> = new EventEmitter();
 
   addTodo() {
+
+    console.log(this.newTodo);
+
     this.add.emit(this.newTodo);
+    const len = this.newTodo;
+
+    if (len.title.length > 0) {
+      console.log('>0');
+    }
     this.newTodo = new Todo();
+
   }
 
 }
