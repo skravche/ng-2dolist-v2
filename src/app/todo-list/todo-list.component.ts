@@ -8,7 +8,6 @@ import { Todo } from '../todo';
 })
 
 export class TodoListComponent {
-
   @Input()
   todos: Todo[];
 
@@ -17,9 +16,6 @@ export class TodoListComponent {
 
   @Output()
   toggleComplete: EventEmitter<Todo> = new EventEmitter();
-
-  constructor() {
-  }
 
   onToggleTodoComplete(todo: Todo) {
     this.toggleComplete.emit(todo);

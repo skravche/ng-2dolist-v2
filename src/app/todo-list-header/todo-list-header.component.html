@@ -1,6 +1,8 @@
 <header class="header">
   <h1>Todos</h1>
-  <input class="new-todo"  name="intp" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" [ngClass]="{'length': newTodo.title?.length}"
+  <input class="new-todo"  name="intp" placeholder="What needs to be done?" autofocus=""
+         [(ngModel)]="newTodoTitle.title"
+         [ngClass]="{'length': newTodoTitle.title?.length}"
          (keyup.enter)="addTodo()">
 </header>
 

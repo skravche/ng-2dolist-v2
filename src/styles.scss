@@ -208,6 +208,7 @@ label[for='toggle-all'] {
 
     &:hover .destroy {
       display: block;
+      cursor: pointer;
     }
 
     .edit {
@@ -323,6 +324,7 @@ label[for='toggle-all'] {
 
   .todo-list li .toggle {
     background: none;
+    cursor: pointer;
   }
 
   .toggle-all {

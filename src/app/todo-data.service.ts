@@ -3,17 +3,17 @@ import { Todo } from './todo';
 
 @Injectable()
 export class TodoDataService {
-  num: number = 0;
-  // lastId = 0;
-  todos: Todo[] = [];
 
-  constructor() {}
+  private lastID: number = 0;
+  private todos: Todo[] = [];
 
   addTodo(todo: Todo): TodoDataService {
+
     if (!todo.id) {
-      todo.id = ++this.num;
+      todo.id = ++this.lastID;
     }
     this.todos.push(todo);
+
     return this;
   }
 
@@ -23,12 +23,14 @@ export class TodoDataService {
   }
 
  updateTodoById(id: number, values: object = {}): Todo {
+
     const todo = this.getTodoById(id);
 
     if (!todo) {
       return null;
     }
     Object.assign(todo, values);
+
     return todo;
   }
 
@@ -37,13 +39,14 @@ export class TodoDataService {
   }
 
   getTodoById(id: number): Todo {
-    return this.todos.filter(todo => todo.id === id).pop();
+    return this.todos.find(todo => todo.id === id);
   }
 
   toggleTodoComplete(todo: Todo) {
     const updatedTodo = this.updateTodoById(todo.id, {
       complete: !todo.complete,
     });
+
     return updatedTodo;
   }
 }

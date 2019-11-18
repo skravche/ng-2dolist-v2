@@ -8,23 +8,13 @@ import { Todo } from '../todo';
 })
 export class TodoListHeaderComponent {
 
-  newTodo: Todo = new Todo();
+  newTodoTitle: Todo = new Todo();
 
   @Output()
   add: EventEmitter<Todo> = new EventEmitter();
 
   addTodo() {
-
-    console.log(this.newTodo);
-
-    this.add.emit(this.newTodo);
-    const len = this.newTodo;
-
-    if (len.title.length > 0) {
-      console.log('>0');
-    }
-    this.newTodo = new Todo();
-
+    this.add.emit(this.newTodoTitle);
+    this.newTodoTitle = new Todo();
   }
-
 }

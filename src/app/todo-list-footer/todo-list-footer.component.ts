@@ -7,10 +7,6 @@ import { Todo } from '../todo';
   styleUrls: ['./todo-list-footer.component.scss']
 })
 export class TodoListFooterComponent {
-
   @Input()
   todos: Todo[];
-
-  constructor() {
-  }
 }
